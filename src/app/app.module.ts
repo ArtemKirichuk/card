@@ -11,10 +11,16 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule , HttpClient } from '@angular/common/http';
+// import { AppModule } from '../app/app.module';
+
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     CardComponent
   ],
   imports: [
@@ -22,6 +28,7 @@ import { HttpClientModule , HttpClient } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    
     //material design
     MatSliderModule,
     MatCardModule,
@@ -32,4 +39,10 @@ import { HttpClientModule , HttpClient } from '@angular/common/http';
   providers: [  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    registerLocaleData(localeRu,'ru')
+  }
+  
+}
+

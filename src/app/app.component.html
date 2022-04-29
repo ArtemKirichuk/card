@@ -1,16 +1,22 @@
 <div class="container">
-  <mat-card ><h2>Карточки</h2></mat-card>
+  <mat-card>
+    <h2>Карточки</h2>
+    <p>{{ dToday | date: 'dd MMMM dddd': '' : 'ru' }}</p>
+  </mat-card>
   <mat-card>
     <button color="primary" mat-raised-button (click)="fnToggleCards()">
       Показать/скрыть
     </button>
   </mat-card>
-  <div *ngIf="bToggle;else ElseContent">
-    
-    <app-card *ngFor="let item of aCardsData; let i = index" [nIndex]="i" (fnDelete)="fnDeleteCard($event)" [oCard]="item"></app-card>
+  <div *ngIf="bToggle; else ElseContent">
+    <app-card
+      *ngFor="let item of aCardsData; let i = index"
+      [nIndex]="i"
+      (fnDelete)="fnDeleteCard($event)"
+      [oCard]="item"
+    ></app-card>
   </div>
   <ng-template #ElseContent>
-    <mat-card ><p>Карточки скрыты</p></mat-card>
+    <mat-card><p>Карточки скрыты</p></mat-card>
   </ng-template>
-  
 </div>
