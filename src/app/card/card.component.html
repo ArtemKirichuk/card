@@ -1,16 +1,16 @@
-<mat-card>
+<mat-card class="card">
   <mat-card-title-group>
     <mat-card-title class="cardTitle" [ngStyle]="{ color: sColor }"
       >{{ sTitle }}
     </mat-card-title>
     <div class="btnContainer">
-      <button (click)="sColor = 'Red'" mat-raised-button>Red</button>
-      <button (click)="sColor = 'Blue'" mat-raised-button>Blue</button>
+      <button (click)="sColor = 'Red'" mat-button>Красный</button>
+      <button (click)="sColor = 'Blue'" mat-button>Синий</button>
     </div>
     <mat-card-subtitle
       [class]="{
-        textRed: sColor === 'Red' ?? true,
-        textBlue: sColor == 'Blue' ?? true
+        textRed: sColor === 'Red' ?true : '' ,
+        textBlue: sColor == 'Blue' ?true:'' 
       }"
       >{{ sDescription }}</mat-card-subtitle
     >
@@ -69,13 +69,13 @@
   <mat-card-actions>
     <!-- <button [disabled]="bDisabled" mat-button>Сбросить наименование</button> -->
 
-    <button (click)="sTitle = sConsTitle" mat-raised-button>
+    <button (click)="sTitle = sConsTitle" mat-button>
       Сбросить наименование
     </button>
-    <button (click)="fnChNameTitle(InputName.value)" mat-raised-button>
+    <button (click)="fnChNameTitle(InputName.value)" mat-button>
       Изменить название карточки
     </button>
-    <button (click)="fnDeleteCard()" mat-raised-button>
+    <button (click)="fnDeleteCard()" mat-button>
       Удалить карточку.
     </button>
   </mat-card-actions>

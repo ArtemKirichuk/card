@@ -15,7 +15,7 @@ export class AppComponent {
   dToday!:Date ;
   constructor(dataService:DataService){
     dataService.getData().subscribe((data)=>{ this.aCardsData = data.data});
-    debugger;
+    
     this.dToday = new Date()
   }
   

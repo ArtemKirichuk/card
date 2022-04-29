@@ -17,6 +17,8 @@ import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,7 @@ import localeRu from '@angular/common/locales/ru';
 export class AppModule { 
   constructor(){
     registerLocaleData(localeRu,'ru')
+  
   }
   
 }
-
