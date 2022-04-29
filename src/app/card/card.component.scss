@@ -1,0 +1,19 @@
+.img {
+    width : 100px;
+    height: 100px;
+}
+
+mat-card {
+    .textBlue {
+        color: blue;
+    }
+
+    .textRed {
+        color: red;
+    }
+
+    & button {
+        margin-right: 4px;
+    }
+
+}

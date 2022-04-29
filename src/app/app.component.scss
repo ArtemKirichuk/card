@@ -1,0 +1,9 @@
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+:host::ng-deep mat-card {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
