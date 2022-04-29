@@ -1,11 +1,12 @@
 <mat-card>
   <mat-card-title-group>
-    <img class="img" mat-card-image [src]="sUrl" alt="Angular" (click)="fnToggleUrl(sUrl)" />
     <mat-card-title class="cardTitle" [ngStyle]="{ color: sColor }"
       >{{ sTitle }}
+    </mat-card-title>
+    <div class="btnContainer">
       <button (click)="sColor = 'Red'" mat-raised-button>Red</button>
       <button (click)="sColor = 'Blue'" mat-raised-button>Blue</button>
-    </mat-card-title>
+    </div>
     <mat-card-subtitle
       [class]="{
         textRed: sColor === 'Red' ?? true,
@@ -14,8 +15,16 @@
       >{{ sDescription }}</mat-card-subtitle
     >
   </mat-card-title-group>
+  <img
+    class="img"
+    mat-card-image
+    [src]="sUrl"
+    alt="Angular"
+    (click)="fnToggleUrl(sUrl)"
+  />
 
   <mat-card-content>
+    <p>{{ sText }}</p>
     <!-- <mat-form-field (keyup)="sTitle = InputName.value" appearance="fill">
       <mat-label>Название карточки через (keyup)="0"</mat-label>
       <input
@@ -59,11 +68,15 @@
   </mat-card-content>
   <mat-card-actions>
     <!-- <button [disabled]="bDisabled" mat-button>Сбросить наименование</button> -->
+
+    <button (click)="sTitle = sConsTitle" mat-raised-button>
+      Сбросить наименование
+    </button>
     <button (click)="fnChNameTitle(InputName.value)" mat-raised-button>
       Изменить название карточки
     </button>
-    <button (click)="sTitle = sConsTitle" mat-raised-button>
-      Сбросить наименование
+    <button (click)="fnDeleteCard()" mat-raised-button>
+      Удалить карточку.
     </button>
   </mat-card-actions>
 </mat-card>

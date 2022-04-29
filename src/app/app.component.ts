@@ -10,15 +10,19 @@ import { ifCart,ifCarts } from './if.component'
 export class AppComponent {
   title = 'card';
   bToggle: boolean = true;
-  aCartsData!:ifCart[];
+  aCardsData!:ifCart[];
   
   constructor(dataService:DataService){
-    dataService.getData().subscribe((data)=>{ this.aCartsData = data.data});
+    dataService.getData().subscribe((data)=>{ this.aCardsData = data.data});
   }
   
   fnGetData(result:object){
     
-     this.aCartsData = (result as ifCarts).data;
+     this.aCardsData = (result as ifCarts).data;
+  }
+  fnDeleteCard(card:ifCart){
+    
+    this.aCardsData.splice(this.aCardsData.indexOf(card),1);
   }
   fnToggleCards() {
     this.bToggle = !this.bToggle;

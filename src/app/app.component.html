@@ -7,7 +7,7 @@
   </mat-card>
   <div *ngIf="bToggle;else ElseContent">
     
-    <app-card *ngFor="let item of aCartsData"></app-card>
+    <app-card *ngFor="let item of aCardsData; let i = index" [nIndex]="i" (fnDelete)="fnDeleteCard($event)" [oCard]="item"></app-card>
   </div>
   <ng-template #ElseContent>
     <mat-card ><p>Карточки скрыты</p></mat-card>

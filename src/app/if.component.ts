@@ -1,5 +1,5 @@
 export interface ifCart{
-    name:string,
+    title:string,
     text:string
 }
 export interface ifCarts{
