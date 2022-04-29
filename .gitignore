@@ -18,7 +18,7 @@ chrome-profiler-events*.json
 .project
 .classpath
 .c9/
-.angular
+/.angular
 *.launch
 .settings/
 *.sublime-workspace
